@@ -1,5 +1,5 @@
 export async function getSagda() {
-  const response = await fetch("http://api.alquran.cloud/v1/sajda/ar.alafasy");
+  const response = await fetch("https://api.alquran.cloud/v1/sajda/ar.alafasy");
   const {
     data: { ayahs },
   } = await response.json();
@@ -7,14 +7,14 @@ export async function getSagda() {
 }
 
 export async function getSura() {
-  const response = await fetch("http://api.alquran.cloud/v1/surah");
+  const response = await fetch("https://api.alquran.cloud/v1/surah");
   const { data } = await response.json();
   return data;
 }
 
 export async function getOneSura(id) {
   const response = await fetch(
-    `http://api.alquran.cloud/v1/surah/${id}/ar.alafasy`
+    `https://api.alquran.cloud/v1/surah/${id}/ar.alafasy`
   );
   const { data } = await response.json();
   return data;
@@ -53,7 +53,7 @@ export async function getAzkar() {
 
 export async function tafser(tafser_id, sura_number, ayah_number) {
   const response = await fetch(
-    `http://api.quran-tafseer.com/tafseer/${tafser_id}/${sura_number}/${ayah_number}`
+    `https://api.quran-tafseer.com/tafseer/${tafser_id}/${sura_number}/${ayah_number}`
   );
   const { text, tafseer_name } = await response.json();
   return [text, tafseer_name];
