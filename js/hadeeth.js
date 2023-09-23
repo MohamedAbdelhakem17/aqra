@@ -15,7 +15,6 @@ getOneCategorie(id, page).then((data) => {
   data.forEach((element) => displayCategorieHadeeth(element));
   let hadeeths = [...document.querySelectorAll("#hadeeth .content .hadeeth")];
   goTohadeeth(hadeeths);
-  console.log(hadeeths);
 });
 
 function goTohadeeth(arr) {
