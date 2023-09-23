@@ -15,6 +15,7 @@ getOneCategorie(id, page).then((data) => {
   data.forEach((element) => displayCategorieHadeeth(element));
   let hadeeths = [...document.querySelectorAll("#hadeeth .content .hadeeth")];
   goTohadeeth(hadeeths);
+  console.log(hadeeths);
 });
 
 function goTohadeeth(arr) {
@@ -33,7 +34,9 @@ function pagination(totalPages) {
   let lis = "";
 
   if (currentPage >= totalPages - 10) {
-    currentPage = totalPages - 10;
+    if (totalPages > 9) {
+      currentPage = totalPages - 10;
+    }
   }
 
   lis += `<li class="pre">></li>`;
@@ -46,7 +49,7 @@ function pagination(totalPages) {
   }
   lis += `<li class="next"><</li>`;
 
-  paginationList.innerHTML = lis;
+  paginationList.innerHTML = totalPages != 1 ? lis : "";
 
   items = paginationList.querySelectorAll(".item:not(.dot)");
   items.forEach((li) => {
