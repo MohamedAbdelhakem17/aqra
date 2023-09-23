@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>title</title>
+    <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon" />
+    <!-- Googel Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,600;0,900;1,100;1,200;1,300;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet" />
+    <!-- Font  Awesome -->
+    <link rel="stylesheet" href="../css/all.css" />
+    <!-- Normalize Css -->
+    <link rel="stylesheet" href="../css/normalize.css" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <!-- Index css -->
+    <link rel="stylesheet" href="../css/index.css" />
+</head>
+
+<body id="suraPage">
+    <!-- Strat navbar -->
+    <nav id="nav">
+        <div class="container d-flex align-items-center justify-content-between py-2 flex-column flex-md-row">
+            <div class="logo d-flex align-items-center justify-content-between justify-content-md-center mb-2">
+                <h1>أَقرَأَ</h1>
+                <div class="search">
+                    <i class="fa-solid fa-magnifying-glass icon"></i>
+                    <div class="input">
+                        <input type="text" placeholder="بـــــحـــــت" />
+                    </div>
+                    <i class="fa-solid fa-xmark clear"></i>
+                </div>
+            </div>
+            <ul class="menu list-unstyled d-flex align-items-center justify-content-end my-md-0 my-2 me-auto">
+                <li><a href="../index.html" class="link-item">الرئسية</a></li>
+                <li>
+                    <a href="prayerTimes.html" class="link-item">مواقيت الصلاة</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- End navbar -->
+
+    <!-- Strat sura -->
+    <section id="sura" class="py-4 position-relative">
+        <h6 class="text-center p-2 fw-bold position-absolute end-0">صــفــحــة
+            <span class="badge text-bg-primary" id="pageOf">1</span> مــن
+            <span class="badge text-bg-primary">6</span>
+        </h6>
+        <div class="container py-2">
+            <div class="title d-flex align-items-center justify-content-center">
+                <h2 class="h1 pb-2">القرآن الكريم</h2>
+            </div>
+            <div class="content row justify-content-center">
+                <!-- Display Sura -->
+            </div>
+        </div>
+    </section>
+    <!-- End sura -->
+    <ul id="pagination"></ul>
+    <script src="../js/allSura.js" type="module"></script>
+</body>
+
+</html>

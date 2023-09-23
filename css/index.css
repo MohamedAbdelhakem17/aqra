@@ -1,0 +1,739 @@
+/* Start Variabl */
+:root {
+  --bg-color: #fefefe;
+  --section-color: #eef2f5;
+  --hover-color: #a1e5d2;
+  --mute-text-color: #98a7bb;
+  --second-text-color: #17bd86;
+  --main-text-color: #000;
+}
+
+/* End Variabl */
+/* Start Global Rules */
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Almarai", sans-serif;
+  background-color: var(--section-color);
+}
+
+a {
+  text-decoration: none;
+}
+
+.title h2 {
+  font-style: italic;
+  font-weight: 700;
+}
+
+.title .more {
+  transition: all 0.3s linear;
+  font-weight: 700;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.more:hover {
+  color: var(--second-text-color);
+}
+
+/* End Global Rules */
+
+/* Strat Navbar */
+#nav {
+  background-color: var(--bg-color);
+  box-shadow: -1px 1px 0 0px var(--hover-color);
+  z-index: 1000000;
+}
+
+#nav .logo h1 {
+  font-size: 2rem;
+  color: var(--second-text-color);
+  font-weight: bolder;
+  margin: 0;
+}
+
+#nav .logo .search {
+  position: relative;
+  margin: 0 10px;
+  border: 2px solid var(--second-text-color);
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  transition: all linear 0.3s;
+  overflow: hidden;
+}
+
+#nav .logo .search.active {
+  width: 350px;
+}
+
+#nav .logo .search .icon {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  color: var(--second-text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  transition: all linear 0.5s;
+  cursor: pointer;
+  z-index: 20;
+  background-color: var(--bg-color);
+}
+
+#nav .logo .search .icon:hover {
+  background-color: var(--hover-color);
+  color: var(--bg-color);
+}
+
+#nav .logo .search .input {
+  width: 300px;
+  position: absolute;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#nav .logo .search .input input[type="text"] {
+  width: 100%;
+  height: 100%;
+  padding: 5px 30px 5px 0px;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  position: absolute;
+  top: 0;
+}
+
+#nav .logo .search .clear {
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  transform: translate(-50%, -50%);
+  color: var(--mute-text-color);
+  cursor: pointer;
+}
+
+#nav .menu li {
+  margin: 0 30px;
+}
+
+#nav .menu li .link-item {
+  color: var(--second-text-color);
+  font-size: 1.3rem;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 0.5s linear;
+  padding: 5px 20px;
+}
+
+#nav .menu li .link-item:hover,
+#nav .menu li .link-item.active {
+  background-color: var(--hover-color);
+  color: var(--bg-color);
+}
+
+@media (max-width: 991px) {
+  html {
+    font-size: 12px;
+  }
+
+  #nav .logo .search.active {
+    width: 300px;
+  }
+
+  #nav .logo .search .input {
+    width: 250px;
+  }
+}
+
+/* end Navbar */
+
+/* Strat sajda */
+
+#sajda .content .sajda {
+  background-color: var(--bg-color);
+  box-shadow: 0px 0px 10px var(--mute-text-color);
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  aspect-ratio: 5 / 4;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#sajda .content .sajda h2 {
+  font-weight: 600;
+  padding: 20px 10px;
+  text-align: center;
+  line-height: 1.5;
+  font-size: 20px;
+}
+
+#sajda .content .sajda .data-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 10px 0px;
+  font-size: 16px;
+  width: 100%;
+}
+
+#sajda .content .sajda .data-info span {
+  background-color: var(--second-text-color) !important;
+  padding: 8px !important;
+}
+
+/* end sajda */
+
+/* Start Suar */
+#sura .content .sura {
+  background-image: url("../img/pexels-rdne-stock-project-7249294.jpg");
+  background-size: cover;
+  box-shadow: 0px 0px 4px var(--mute-text-color),
+    100px 1000px 10px inset rgba(0, 0, 0, 0.349);
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  aspect-ratio: 1/1;
+  align-items: center;
+  justify-content: space-around;
+  border: 2px solid var(--bg-color);
+  transition: all 300ms linear;
+  cursor: pointer;
+}
+
+#sura .content .sura:hover {
+  box-shadow: 0px 0px 4px var(--mute-text-color);
+}
+
+#sura .content .sura:hover h2 {
+  color: var(--section-color);
+  text-shadow: 15px 15px 10px var(--second-text-color);
+}
+
+#sura .content .sura h2 {
+  font-weight: 600;
+  padding: 20px 10px;
+  text-align: center;
+  font-size: 2rem;
+  transition: all 300ms linear;
+  color: white;
+}
+
+#sura h6 span {
+  background-color: var(--second-text-color) !important;
+}
+
+/* end Suar */
+
+/* Start prayer times page*/
+.head {
+  background-image: url(../img/pexels-manprit-kalsi-1537086.jpg);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: 200px 200px 200px 200px inset #00000033;
+  min-height: 50vh;
+}
+
+.head .data-time h2 {
+  margin: 0;
+  font-size: 4rem;
+  font-weight: 500;
+  color: var(--section-color);
+}
+
+.head .data-time p {
+  color: var(--mute-text-color);
+  margin: 0;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.head .option .time {
+  border: 2px solid var(--second-text-color);
+  border-radius: 10px;
+  box-shadow: 0px 1px 5px #efefef8a;
+  margin-bottom: 10px;
+}
+
+.head .option .time h3 {
+  margin: 0;
+  font-weight: 900;
+  color: var(--bg-color);
+  font-size: 2rem;
+}
+
+.head .option .time p {
+  margin: 0;
+  padding: 10px 0px;
+  color: var(--bg-color);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.head .option .city {
+  color: var(--second-text-color);
+  padding: 10px;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* Start content */
+.content .inner {
+  background: var(--bg-color);
+  border-radius: 10px;
+  overflow: hidden;
+  height: 200px;
+}
+
+.content .inner .name {
+  color: var(--bg-color);
+  background-color: var(--second-text-color);
+  padding: 10px;
+  font-weight: 900;
+  font-size: 1.8rem;
+}
+
+.content .inner .time {
+  margin: 10px 0;
+  padding: 20px;
+  font-size: 4.5rem;
+  font-weight: 500;
+  color: var(--second-text-color);
+  display: block;
+}
+
+/* End content */
+/* End prayer times page*/
+
+/* End All Suras*/
+#pagination {
+  /* width: 50%; */
+  list-style: none;
+  font-size: 1.5rem;
+  font-weight: 800;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  bottom: 0px;
+  z-index: 222222;
+  /* transform: translate(-50%); */
+  column-gap: 30px;
+}
+
+#pagination .item {
+  width: 35px;
+  height: 35px;
+  background-color: var(--hover-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  transition: all 300ms linear;
+}
+
+#pagination .item.active,
+#pagination .item:hover {
+  background-color: var(--second-text-color);
+}
+
+/* End All Suras*/
+
+/* Start Surah*/
+#oneSura #sura .content h3 {
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 600;
+}
+
+#oneSura #sura .content #suraWord {
+  list-style: none;
+  padding: 20px 10px;
+  text-align: center;
+  background-color: white;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+#oneSura #sura .content #suraWord li {
+  display: inline;
+  padding: 5px;
+  line-height: 2;
+  font-size: 1.5rem;
+  font-weight: 600;
+  transition: all 300ms ease-in-out;
+  cursor: pointer;
+}
+
+#oneSura #sura .content #suraWord li span {
+  color: var(--second-text-color);
+  font-weight: 800;
+  transition: all 300ms ease-in-out;
+}
+
+#oneSura #sura .content #suraWord li.active {
+  background-color: var(--second-text-color);
+  color: white;
+  border-radius: 10px;
+}
+
+#oneSura #sura .content #suraWord li.active span {
+  color: white;
+}
+
+@media (max-width: 450px) {
+  #oneSura #sura .content h3 {
+    font-size: 2.5rem;
+  }
+}
+
+.tafser {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(3, 0, 0, 0.5);
+  z-index: 9999999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  transition: all 1s linear;
+  /* transform: translateY(30%); */
+  opacity: 0;
+  overflow-y: auto;
+}
+
+.tafser .tefserpop {
+  width: 80%;
+  background: var(--section-color);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.tafser .tefserpop i {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--hover-color);
+  transition: all 300ms linear;
+  cursor: pointer;
+}
+
+.tafser .tefserpop i:hover {
+  transform: scale(1.2);
+  color: var(--second-text-color);
+}
+
+.tafser .tefserpop .container h2 {
+  font-size: 3rem;
+  color: var(--second-text-color);
+  font-weight: 900;
+  text-align: center;
+  padding: 10px 0px;
+}
+.tafser .tefserpop .container .tafser-type {
+  display: block;
+  color: var(--second-text-color);
+  font-size: 20px;
+  font-weight: 600;
+}
+.tafser .tefserpop .container .ayah p:first-child {
+  font-size: 1.5rem;
+  width: 90%;
+  margin: 10px auto;
+  text-align: center;
+  background: var(--second-text-color);
+  color: var(--bg-color);
+  padding: 10px;
+  border-radius: 10px;
+}
+.tafser .tefserpop .container .ayah .tfserText {
+  border-radius: 10px;
+  font-size: 1.5rem;
+  line-height: 1.8;
+  font-weight: 600;
+  background: var(--bg-color);
+  padding: 20px;
+  box-shadow: 0px 0px 5px var(--mute-text-color);
+}
+.tafser .tefserpop .container .ayah #tafseer_name {
+  background-color: var(--second-text-color) !important;
+  padding: 10px;
+  display: block;
+  width: intrinsic;
+  width: -moz-max-content;
+  width: -webkit-max-content;
+  width: max-content;
+  margin: 0 auto;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+/* End Surah*/
+
+/* Strat hadeeth */
+#hadeeth .content .hadeeth {
+  background-color: var(--bg-color);
+  box-shadow: 0px 0px 10px var(--mute-text-color);
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  aspect-ratio: 3/ 2;
+  align-items: center;
+  justify-content: space-around;
+  cursor: pointer;
+  transition: all 300ms linear;
+}
+
+#hadeeth #hadeeth .content .hadeeth {
+  aspect-ratio: 1 / 1;
+}
+
+#hadeeth .content .hadeeth:hover {
+  transform: scale(0.9);
+  box-shadow: none;
+}
+
+#hadeeth .content .hadeeth h2 {
+  font-weight: 600;
+  padding: 20px 10px;
+  text-align: center;
+  line-height: 1.5;
+  font-size: 1.5rem;
+}
+
+#hadeeth .content .hadeeth span {
+  background-color: var(--second-text-color) !important;
+  padding: 8px !important;
+}
+
+#hadeeth #loadMore {
+  display: block;
+  margin: 15px auto;
+  width: 200px;
+  padding: 10px 20px;
+  border: 2px solid var(--bg-color);
+  color: var(--bg-color);
+  background-color: var(--second-text-color);
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 700;
+  transition: all 300ms linear;
+}
+
+#hadeeth #loadMore:hover {
+  background-color: var(--bg-color);
+  color: var(--second-text-color);
+  border: 2px solid var(--second-text-color);
+}
+
+/* End hadeeth */
+
+/* Start one hadeeth */
+#oneHadeeth .title {
+  width: 85%;
+  text-align: center;
+  padding: 10px 20px;
+  background-color: var(--second-text-color);
+  color: var(--bg-color);
+  border-radius: 10px;
+}
+
+#oneHadeeth .title h2 {
+  line-height: 1.8;
+  margin: 0;
+}
+
+#oneHadeeth .contentHadeeth span {
+  background-color: var(--second-text-color) !important;
+  padding: 8px !important;
+}
+
+#oneHadeeth .contentHadeeth {
+  text-align: center;
+  margin: 10px 0;
+  padding: 10px;
+  background-color: var(--bg-color);
+  font-size: 19px;
+  font-weight: 600;
+  border-radius: 10px;
+}
+
+#oneHadeeth .contentHadeeth h2 {
+  width: intrinsic;
+  width: -moz-max-content;
+  width: -webkit-max-content;
+  width: max-content;
+  margin: 0px auto 10px auto;
+  background: var(--second-text-color);
+  padding: 10px;
+  border-radius: 10px;
+  color: var(--bg-color);
+  font-weight: 700;
+  font-size: 20px;
+}
+
+#oneHadeeth .contentHadeeth p {
+  line-height: 1.8;
+  margin: 0;
+}
+
+#oneHadeeth .contentHadeeth ul,
+#oneHadeeth .contentHadeeth dl {
+  list-style: none;
+  text-align: start;
+}
+
+#oneHadeeth .contentHadeeth ul li i,
+#oneHadeeth .contentHadeeth dl i {
+  color: var(--second-text-color);
+  font-size: 15px;
+  margin: 0 5px;
+}
+
+#oneHadeeth .contentHadeeth dl dt {
+  color: var(--second-text-color);
+  font-size: 17px;
+}
+
+#hadeeth #pagination {
+  column-gap: 5px;
+}
+#hadeeth #pagination li.dot {
+  color: var(--second-text-color);
+  background-color: transparent;
+}
+
+#hadeeth #pagination li.pre,
+#hadeeth #pagination li.next {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 300ms linear;
+  font-size: 3rem;
+  margin: 0 10px;
+  font-weight: 900;
+  color: var(--second-text-color);
+}
+
+#hadeeth #pagination li.pre:hover,
+#hadeeth #pagination li.next:hover {
+  background-color: var(--hover-color);
+  color: var(--bg-color);
+}
+/* End one hadeeth */
+
+/* Start azkar */
+#azkar .content .azkar {
+  background-color: var(--bg-color);
+  box-shadow: 0px 0px 10px var(--mute-text-color);
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  aspect-ratio: 2 / 1;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+  cursor: pointer;
+  transition: all 300ms linear;
+}
+
+#azkar .content .azkar:hover {
+  transform: scale(0.9);
+  box-shadow: none;
+}
+
+#azkar .content .azkar h2 {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+#oneAzkar #azkar .content .azkar {
+  background-color: var(--bg-color);
+  box-shadow: 0px 0px 10px var(--mute-text-color);
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  aspect-ratio: 5 /4;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+  cursor: pointer;
+}
+#oneAzkar #azkar .content .azkar p {
+  font-weight: 700;
+  line-height: 1.5;
+}
+#oneAzkar #azkar .content .azkar span {
+  padding: 4px;
+  background-color: var(--second-text-color) !important;
+}
+/* End azkar */
+
+/*Start go to Top */
+#gotop {
+  display: flex;
+  opacity: 0;
+  transform: translateY(50px);
+  font-size: 2rem;
+  font-weight: 900;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--bg-color);
+  background-color: var(--second-text-color);
+  color: var(--bg-color);
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all, 0.3s linear;
+}
+
+#gotop.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+#gotop:hover {
+  background-color: var(--hover-colorcolor);
+  color: var(--second-text-color);
+}
+
+/*End go to Top */
