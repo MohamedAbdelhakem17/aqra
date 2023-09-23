@@ -51,10 +51,11 @@ export async function getAzkar() {
   return data;
 }
 
-export async function tafser(tafser_id, sura_number, ayah_number) {
+export async function tafser(sura_number, ayah_number) {
   const response = await fetch(
-    `http://api.quran-tafseer.com/tafseer/${tafser_id}/${sura_number}/${ayah_number}`
+    `https://quranenc.com/api/v1/translation/sura/arabic_moyassar/${sura_number}`
   );
-  const { text, tafseer_name } = await response.json();
-  return [text, tafseer_name];
+  const { result } = await response.json();
+let {translation} = result.find((el) => +el.aya === +ayah_number);
+  return translation;
 }
