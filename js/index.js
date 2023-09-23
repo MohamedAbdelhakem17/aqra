@@ -153,12 +153,6 @@ if (oneSura) {
   let audioArray = [];
   let id = new URL(location.href);
   id = id.searchParams.get("id");
-  // Display Tafser List
-  const tafseerOption = document.getElementById("tafserType");
-  tafseerList.forEach(({ id, Tname }) => {
-    tafseerOption.innerHTML += `<option value="${id}">${Tname}</option>`;
-  });
-
   // Get Susra
   getOneSura(id).then((data) => {
     suraName.innerHTML = data.name;
@@ -220,10 +214,9 @@ if (oneSura) {
         tafseerContainer.style.display = "flex";
         tafseerContainer.style.opacity = 1;
         ayahText.innerHTML = ayah.innerText;
-        tafser(1, suraID, ayahId).then((data) => {
-          tfserText.innerHTML = data[0];
+        tafser(suraID, ayahId).then((data) => {
+          tfserText.innerHTML = `${data}`;
         });
-        change(ayahId);
       });
     });
   }
@@ -234,16 +227,6 @@ if (oneSura) {
     tafseerContainer.style.display = "none";
     tafseerContainer.style.opacity = 1;
   });
-
-  // Change Tafser
-  function change(id) {
-    tafseerOption.addEventListener("change", () => {
-      const selectedId = parseInt(document.getElementById("tafserType").value);
-      tafser(selectedId, suraID, id).then((data) => {
-        tfserText.innerHTML = data[0];
-      });
-    });
-  }
 }
 
 if (oneHadeeth) {
