@@ -53,7 +53,7 @@ export async function getAzkar() {
 
 export async function tafser(tafser_id, sura_number, ayah_number) {
   const response = await fetch(
-    `https://api.quran-tafseer.com/tafseer/${tafser_id}/${sura_number}/${ayah_number}`
+    `http://api.quran-tafseer.com/tafseer/${tafser_id}/${sura_number}/${ayah_number}`
   );
   const { text, tafseer_name } = await response.json();
   return [text, tafseer_name];
