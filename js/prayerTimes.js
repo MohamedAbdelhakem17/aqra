@@ -3,7 +3,7 @@ let intervalId;
 let ishaHour;
 // Get Fata Function
 function getData(iso = "Al Qāhirah") {
-  const url = "http://api.aladhan.com/v1/timingsByCity";
+  const url = "https://api.aladhan.com/v1/timingsByCity";
   const parameter = {
     country: "eg",
     city: iso,
