@@ -13,8 +13,9 @@ let totalPages = Math.ceil(total / itemInPage);
 
 getOneCategorie(id, page).then((data) => {
   data.forEach((element) => displayCategorieHadeeth(element));
-  items = [...document.querySelectorAll("#content .hadeeth")];
-  goTohadeeth(items);
+  let hadeeths = [...document.querySelectorAll("#hadeeth .content .hadeeth")];
+  goTohadeeth(hadeeths);
+  console.log(hadeeths);
 });
 
 function goTohadeeth(arr) {
@@ -22,6 +23,7 @@ function goTohadeeth(arr) {
     item.addEventListener("click", () => {
       let url = `../page/oneHadeeth.html?id=${item.getAttribute("id")}`;
       window.location.assign(url);
+      // alert(url);
     });
   });
 }
@@ -53,9 +55,13 @@ function pagination(totalPages) {
       let page = parseInt(e.target.innerHTML);
       let url = `../page/hadeeth.html?id=${id}&page=${page}`;
       window.location.assign(url);
-      getOneCategorie(id, page).then((data) =>
-        data.forEach((element) => displayCategorieHadeeth(element))
-      );
+      getOneCategorie(id, page).then((data) => {
+        data.forEach((element) => displayCategorieHadeeth(element));
+        let hadeeths = [
+          ...document.querySelectorAll("#hadeeth .content .hadeeth"),
+        ];
+        goTohadeeth(hadeeths);
+      });
 
       items.forEach((li) => li.classList.remove("active"));
       li.classList.add("active");
@@ -66,9 +72,11 @@ function pagination(totalPages) {
     }
   });
 
-  getOneCategorie(id, currentPage + 1).then((data) =>
-    data.forEach((element) => displayCategorieHadeeth(element))
-  );
+  getOneCategorie(id, currentPage + 1).then((data) => {
+    data.forEach((element) => displayCategorieHadeeth(element));
+    let hadeeths = [...document.querySelectorAll("#hadeeth .content .hadeeth")];
+    goTohadeeth(hadeeths);
+  });
 
   let next = paginationList.querySelector(".next");
   let pre = paginationList.querySelector(".pre");
